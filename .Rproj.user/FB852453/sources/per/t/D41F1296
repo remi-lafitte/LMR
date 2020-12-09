@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2560355999",
+    "hash" : "3833615048",
     "id" : "D41F1296",
-    "lastKnownWriteTime" : 1607365758,
-    "last_content_update" : 1607365758,
+    "lastKnownWriteTime" : 1607441416,
+    "last_content_update" : 1607441417002,
     "path" : "C:/Users/Remi/Desktop/LM_R/pilot.R",
     "project_path" : "pilot.R",
     "properties" : {
-        "cursorPosition" : "18,19",
-        "scrollLine" : "11"
+        "cursorPosition" : "54,0",
+        "scrollLine" : "38"
     },
     "read_only" : false,
     "read_only_alternatives" : [

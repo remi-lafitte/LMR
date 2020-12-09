@@ -4,7 +4,8 @@ library(broom)
 result = list() 
 for(i in list.files(path = here::here("data"))) {
 d<-read.csv(here::here("data", i), header=T)
-d<-d[-seq(1:21),] %>%
+d$trials.thisN<-as.character(d$trials.thisN)
+d<-d[is.na(d$trials.thisN) ==F,] %>%
   select(offset, resp.keys) %>%
   #90 trials
   mutate(bias = ifelse(resp.keys == "e",0,1))
@@ -32,11 +33,11 @@ p<-ggplot(d)+
   geom_point(aes(x=pse, y=0.5), fill="red", size=5, col = "black", shape=24,
              stroke = 1.5)+
   scale_y_continuous(limits=c(-0.1,1.1),breaks = seq(0,1,0.5),
-                     labels = c("0%\nréponse gauche",
-                                paste0("50%\nvotre milieu\nsubjectif est de\n",
+                     labels = c("0%\nreponse gauche",
+                                paste0("50%\nvotre milieu\nsubjectif est\ndecalee de\n",
                                        round(pse,1), "mm"), 
-                                       "100%\nréponse droite"))+
-  labs(y="% de réponse 'ligne coupée à droite'", x= "Décalage de la ligne verticale \npar rapport au milieu (mm)")+
+                                       "100%\nreponse droite"))+
+  labs(y="% de reponse 'ligne coupee a droite'", x= "Decalage de la ligne verticale \npar rapport au milieu (mm)")+
   theme_bw(base_size = 16) 
 
 name_subject<-substr(i, start = 1, stop = 8)
